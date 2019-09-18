@@ -2,12 +2,14 @@
   "name": "react-native-keyboard-aware-scroll-view",
   "version": "0.9.1",
   "description": "A React Native ScrollView component that resizes when the keyboard appears.",
-  "main": "index.js",
+  "main": "build/index.js",
   "types": "index.d.ts",
   "scripts": {
     "lint": "eslint lib",
     "test": "npm run lint",
-    "flow": "flow check"
+    "flow": "flow check",
+    "build": "babel lib --out-dir build",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,11 @@
     "react-native": ">=0.48.4"
   },
   "devDependencies": {
+    "@babel/cli": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-react": "7.0.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-flowtype": "^4.2.0",
